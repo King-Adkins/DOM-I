@@ -50,8 +50,10 @@ middleImg.setAttribute('src', siteContent["main-content"] ["middle-img-src"])
 const nav1 = document.querySelectorAll('nav a');
 navArray = Array.from(nav1);
 for(let i = 0; i < navArray.length; i++) {
-  navArray[i].textContent = siteContent['nav']['nav-item-' + i];
+  navArray[i].textContent = siteContent['nav']['nav-item-' + (i + 1)];
 }
+
+
 
 const cta = document.querySelector('h1');
 cta.textContent = siteContent['cta']['h1'];
@@ -96,4 +98,23 @@ const footer = document.querySelector('footer p')
 footer.textContent = siteContent['footer']['copyright']
 
 
+const navList = document.querySelectorAll('a')
+navList.forEach(function(aTag) {
+ aTag.style.color = "green";
+});
 
+const behind = document.createElement('a')
+const parent = document.querySelector('header nav')
+
+parent.appendChild(behind);
+behind.textContent = 'FAQ';
+behind.style.color = 'green';
+
+
+
+const front = document.createElement('a');
+const parent1 = document.querySelector('header nav');
+
+parent1.prepend(front);
+front.textContent = 'Donate';
+front.style.color = 'green';
