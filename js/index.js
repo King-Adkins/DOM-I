@@ -40,3 +40,81 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+const headerImg = document.getElementById("cta-img");
+headerImg.setAttribute('src', siteContent["cta"] ["img-src"])
+
+const middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"] ["middle-img-src"])
+
+const nav1 = document.querySelectorAll('nav a');
+navArray = Array.from(nav1);
+for(let i = 0; i < navArray.length; i++) {
+  navArray[i].textContent = siteContent['nav']['nav-item-' + (i + 1)];
+}
+
+
+
+const cta = document.querySelector('h1');
+cta.textContent = siteContent['cta']['h1'];
+
+
+const btn = document.querySelector('button');
+btn.textContent = siteContent['cta']['button'];
+
+const nodeList = document.querySelectorAll('.text-content h4');
+nodeList[0].textContent = siteContent['main-content']['features-h4'];
+
+const content = document.querySelectorAll('.text-content p');
+content[0].textContent = siteContent['main-content']['features-content'];
+
+nodeList[1].textContent = siteContent['main-content']['about-h4'];
+
+content[1].textContent = siteContent['main-content']['about-content'];
+
+nodeList[2].textContent = siteContent['main-content']['services-h4'];
+
+content[2].textContent = siteContent['main-content']['services-content'];
+
+nodeList[3].textContent = siteContent['main-content']['product-h4']
+
+content[3].textContent = siteContent['main-content']['product-content'];
+
+nodeList[4].textContent = siteContent['main-content']['vision-h4'];
+
+content[4].textContent = siteContent['main-content']['vision-content'];
+
+const contact = document.querySelector('.contact h4');
+contact.textContent = siteContent['contact']['contact-h4']
+
+const contact2 = document.querySelectorAll('.contact p');
+contact2[0].textContent = siteContent['contact']['address']
+
+contact2[1].textContent = siteContent['contact']['phone']
+
+contact2[2].textContent = siteContent['contact']['email']
+
+const footer = document.querySelector('footer p')
+footer.textContent = siteContent['footer']['copyright']
+
+
+const navList = document.querySelectorAll('a')
+navList.forEach(function(aTag) {
+ aTag.style.color = "green";
+});
+
+const behind = document.createElement('a')
+const parent = document.querySelector('header nav')
+
+parent.appendChild(behind);
+behind.textContent = 'FAQ';
+behind.style.color = 'green';
+
+
+
+const front = document.createElement('a');
+const parent1 = document.querySelector('header nav');
+
+parent1.prepend(front);
+front.textContent = 'Donate';
+front.style.color = 'green';
